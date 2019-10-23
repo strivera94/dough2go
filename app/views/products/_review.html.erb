@@ -1,0 +1,5 @@
+<span class="text-warning"><%= review.star_rating %> </span>
+<p><%= review.content %></p>
+<hr>
+<small class='text-muted'>Posted by <%= review.customer.name %> <%= review.created_at.strftime("on %m/%d/%Y")%> </small>
+<hr>

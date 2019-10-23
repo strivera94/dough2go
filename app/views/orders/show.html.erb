@@ -1,0 +1,21 @@
+<%= content_for :body do %>
+<div class="container menu-bg">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "item", collection: @items, as: :item %>
+      <td></td>
+      <td></td>
+      <td>Total:</td>
+      <td><%= number_to_currency( @order.product_orders_total_cost ) %></td>
+    </tbody>
+  </table>
+</div>
+<% end %>

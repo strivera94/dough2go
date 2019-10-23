@@ -1,0 +1,18 @@
+<%= content_for :body do %>
+<div class="container menu-bg pt-4 flex-fill">
+  <div class="row">
+    <div class="col-lg-3">
+        <%= render 'side_bar' %>
+    </div>
+    <!-- /.col-lg-3 -->
+    <div class="col-lg-9">
+      <div class="row">
+        <%= render(partial: "product", collection: @products) || "There are no products" %>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.col-lg-9 -->
+  </div>
+  <!-- /.row -->
+</div>
+<% end %>

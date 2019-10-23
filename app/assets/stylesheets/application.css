@@ -12,12 +12,16 @@
  *
  *= require_tree .
  *= require_self
- */
+ */ 
+ html {
+   height:100%
+} 
 
- a,
-a:focus,
-a:hover {
-  color: #fff;
+body {
+  min-height: 100%;
+  background-color: rgb(255, 255, 255);
+  font-family: 'Asap', sans-serif;
+
 }
 
 /* Custom default button */
@@ -30,4 +34,80 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+body {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/181127105254-08-50-sweets-travel-donuts-super-169.jpg)  !important; 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.navbar {
+  background: rgb(196, 155, 250);
+  /* background: white; */
+  /* background-color: #281519; */
+}
+
+.navbar>.navbar-brand{
+  color: white;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7em;
+}
+
+.navbar-light .navbar-nav .active>.nav-link{
+  color:white;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color:white;
+}
+ 
+ #main-navbar .navbar-brand{
+  color: white;
+} 
+
+.navbar a{
+  color: white;
+}
+
+.list-group {
+  background-color: rgb(232, 232, 232);
+}
+
+.list-group a{
+  color: rgb(193, 96, 162);
+}
+
+.menu-bg{
+  background-color: rgba(59, 11, 53, 0.6);
+  /* opacity: 0.4; */
+}
+
+.card{
+  /* border-radius: 15px; */
+  border: 5px double r#5D270F;
+}
+
+.card-body a{
+  color: rgb(193, 96, 162);
+}
+
+.card-footer{
+  background-color: rgb(232, 232, 232);
+}
+
+#cart-view{
+  color: white;
+}
+
+.table{
+  color: #fff;
+}
+
+.btn-primary{
+  background-color: rgb(196, 155, 249);
+  border-color: rgb(196, 155, 249;
+}
 

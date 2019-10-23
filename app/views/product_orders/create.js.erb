@@ -1,0 +1,12 @@
+number_of_products = "<%= escape_javascript(@order.number_of_individual_products) %>"
+console.log( number_of_products )
+$("#cart-badge").text(number_of_products)
+
+// $(".menu-bg").prepend(`
+//   <div class="alert alert-success" role="alert">
+//     This is a success alert—check it out!
+//   </div>
+// `)
+
+// wait(2000)
+// $('.alert').alert('close')
