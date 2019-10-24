@@ -85,7 +85,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" style="background: #FDA7DF; border-width: 0;">
           <a class="dropdown-item" href="<%= edit_customer_path( current_customer ) %>">Edit Profile</a>
-          <a class="dropdown-item" href="#">Previous Orders</a>
+          <a class="dropdown-item" href="<%= customer_path(current_customer) %> ">Previous Orders</a>
           <div class="dropdown-divider"></div>
          <a class="nav-link" href="<%= sessions_destroy_path(current_customer) %>" > Sign out</a>
 
