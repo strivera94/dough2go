@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_customer, :cart_counter, :current_order
-
-
-
+  
   def current_customer
     if session[:customer_id]
       @current_customer ||= Customer.find(session[:customer_id])
@@ -17,5 +15,9 @@ class ApplicationController < ActionController::Base
 
   def cart_counter
     self.current_order.number_of_individual_products
+  end
+
+  def require_login
+    redirect_to new_session_path unless session.include? :user_id
   end
 end
