@@ -1,0 +1,12 @@
+<div class="list-group"> 
+    <h5 class="list-group-item">Sort by</h5>
+     <% if params[:query] %>
+    <%= link_to 'Least Expensive', products_path(query: params[:query], sort:'cheapest'), class: "list-group-item" %>
+    <%= link_to 'Most Expensive', products_path(query: params[:query], sort:'most_expensive'), class: "list-group-item" %>
+    <%= link_to 'Highest Rated', products_path(query: params[:query], sort:'highest_rated'), class: "list-group-item" %>    
+    <% else %>
+    <%= link_to 'Least Expensive', products_path(sort:'cheapest'), class: "list-group-item" %>
+    <%= link_to 'Most Expensive', products_path(sort:'most_expensive'), class: "list-group-item" %>
+    <%= link_to 'Highest Rated', products_path(sort:'highest_rated'), class: "list-group-item" %>    
+    <% end %>
+</div>
