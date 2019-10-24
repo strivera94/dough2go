@@ -19,4 +19,5 @@ class Product < ApplicationRecord
         (" ★ " * average_rating.to_i) + (" ☆ " * remaining_stars)
 
     end
+
 end

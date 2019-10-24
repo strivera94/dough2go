@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   post 'sessions/create' 
   get 'sessions/destroy'
   get "/" , to:'static#index', as: 'home'
+  get "/about", to: 'static#about', as: 'about'
+  get "/contact", to: 'static#contact', as: 'contact'
   resources :product_orders, only: [:create, :show, :destroy], as: :cart 
   resources :products, only: [:index, :show]
   resources :reviews, only: [:create]
