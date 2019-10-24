@@ -1,5 +1,10 @@
 <%= content_for :body do %>
 <div class="container menu-bg">
+  <% if flash[:order_complete_error] %>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:order_complete_error] %>
+    </div>
+  <% end %>
   <table class="table">
     <thead>
       <tr>
@@ -10,12 +15,15 @@
       </tr>
     </thead>
     <tbody>
-      <%= render partial: "item", collection: @items, as: :item %>
+      <%= render partial: "item", collection: @items, as: :item, locals: {order: @order} %>
       <td></td>
       <td></td>
       <td>Total:</td>
       <td><%= number_to_currency( @order.product_orders_total_cost ) %></td>
     </tbody>
   </table>
+  <div class="d-flex justify-content-end">
+    <%= link_to "Purchase Order", @order, method: "patch", class: "btn btn-primary" %>
+  </div>
 </div>
 <% end %>

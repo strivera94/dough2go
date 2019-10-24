@@ -21,4 +21,8 @@ class Customer < ApplicationRecord
         end
         # self.last_order =  Order.create(customer: self, completed?: false) if last_order.completed?
     end
+
+    def cart_include?(product)
+        last_order.products.include?(product)
+    end
 end

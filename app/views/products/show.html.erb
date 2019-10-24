@@ -18,7 +18,15 @@
               </div>
               <div class="col-4 text-right">
                   <% if current_customer %>
-                  <span><%= render "product_orders/new", locals: [product_id: @product.id] %></span>
+                    <%  if !current_customer.cart_include?(@product) %>
+                      <span id="order-product-form"><%= render "product_orders/new", locals: [product_id: @product.id] %></span>
+                    <% else %>
+                      <span> 
+                        <svg id="i-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 10 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <path d="M2 20 L12 28 30 4" />
+                        </svg>Added
+                       </span>
+                    <% end %>
                 <% end %>
               </div>
             </div>           

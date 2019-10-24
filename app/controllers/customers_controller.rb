@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
         @customer = Customer.create(customer_params)
         if @customer.valid?
             session[:customer_id] = @customer.id # logging them in
-            redirect_to customer_path
+            redirect_to @customer
         else
             flash[:error] = "Sorry-- unable to create account"
             redirect_to new_customer_path
