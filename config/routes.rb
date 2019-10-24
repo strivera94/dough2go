@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/" , to:'static#index', as: 'home'
   get "/about", to: 'static#about', as: 'about'
   get "/contact", to: 'static#contact', as: 'contact'
-  resources :product_orders, only: [:create, :show, :destroy], as: :cart 
+  resources :product_orders, only: [:create, :show, :destroy, :update], as: :cart 
   resources :products, only: [:index, :show]
   resources :reviews, only: [:create]
   resources :orders, only: [:show, :update]
