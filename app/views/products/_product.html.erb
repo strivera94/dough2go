@@ -7,7 +7,7 @@
       <%= link_to product.name, product_path(product) %></a>
     </h4>
     <h5><%= number_to_currency(product.price) %></h5>
-    <p class="card-text"><%= product.ingredients %></p>
+    <p class="card-text"><%= product.ingredients.capitalize %></p>
   </div>
   <div class="card-footer">
     <small><span class="text-warning"><%= product.average_star_rating %><span></small>
