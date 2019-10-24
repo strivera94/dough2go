@@ -19,7 +19,7 @@
 
 body {
   min-height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(196, 155, 249);
   font-family: 'Asap', sans-serif;
 
 }
@@ -70,6 +70,7 @@ body {
 
 .navbar a{
   color: white;
+  font-family: 'Quicksand';
 }
 
 .list-group {
@@ -78,6 +79,7 @@ body {
 
 .list-group a{
   color: rgb(193, 96, 162);
+  font-family: 'Quicksand';
 }
 
 .menu-bg{
@@ -90,12 +92,26 @@ body {
   border: 5px double r#5D270F;
 }
 
+.card-header{
+  font-family: 'Quicksand';
+  font-weight: 900;
+}
+
 .card-body a{
   color: rgb(193, 96, 162);
+  font-family: 'Pacifico', cursive;
+}
+
+.card-text {
+  font-family: 'Quicksand';
 }
 
 .card-footer{
   background-color: rgb(232, 232, 232);
+}
+
+.card-body {
+  font-family: 'Quicksand';
 }
 
 #cart-view{
@@ -109,5 +125,14 @@ body {
 .btn-primary{
   background-color: rgb(196, 155, 249);
   border-color: rgb(196, 155, 249);
+}
+
+.jumbotron > h1{
+  font-family: 'Pacifico', cursive;
+  color: rgb(193, 96, 162);
+}
+
+.jumbotron > p{
+  font-family: 'Quicksand';
 }
 
