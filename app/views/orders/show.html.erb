@@ -23,7 +23,9 @@
     </tbody>
   </table>
   <div class="d-flex justify-content-end">
-    <%= link_to "Purchase Order", @order, method: "patch", class: "btn btn-primary" %>
+    <% if !@order.completed? %>
+      <%= link_to "Purchase Order", @order, method: "patch", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 <% end %>

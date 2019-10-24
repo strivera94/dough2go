@@ -1,0 +1,8 @@
+<% if order.completed? %>
+<tr>
+  <td><%= link_to order_counter + 1, order_path(order.id) %></td>
+  <td><%= link_to order.number_of_individual_products, order_path(order.id) %></td>
+  <td><%= link_to order.updated_at.strftime("%b %-d, %Y"), order_path(order.id) %></td>
+  <td><%= link_to number_to_currency(order.product_orders_total_cost), order_path(order.id) %></td>
+</tr>
+<% end %>

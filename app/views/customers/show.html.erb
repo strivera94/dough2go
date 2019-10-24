@@ -1,10 +1,27 @@
-<%= content_for :body do  %> 
+<%= content_for :body do  %>
 <div class="container menu-bg flex-fill">
     <div class="row mt-5 justify-content-center">
-        <div class="card col-11" >
+        <div class="card col-11">
             <div class="card-body ">
                 <h1 class="card-title">Account Info</h1>
-                <p class="card-text"><h4><%= @customer.email %></h4></p>
+                <p class="card-text">
+                    <h4><%= @customer.email %></h4>
+                </p>
+                <hr>
+                List all orders
+                <table class="table table-borderless" style="color:black;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Number of Items</th>
+                            <th scope="col">Purchase Date</th>
+                            <th scope="col">Final Price</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <%= render(partial: "orders/order", collection: @orders)  %>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

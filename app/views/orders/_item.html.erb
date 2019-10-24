@@ -2,19 +2,25 @@
   <th scope="row"><%= item[:name] %></th>
   <td><%= number_to_currency( item[:price] ) %></td>
   <td>
-    <%= form_with(url: cart_path(item[:id]) , method: "PATCH") do |form| %>
-      <%= form.select(:quantity, (1..12), {selected: item[:quantity]}, {onchange: "this.form.submit();"}) %>
+    <% if !order.completed? %>
+      <%= form_with(url: cart_path(item[:id]) , method: "PATCH") do |form| %>
+        <%= form.select(:quantity, (1..12), {selected: item[:quantity]}, {onchange: "this.form.submit();"}) %>
+      <% end %>
+    <% else %>
+    <p><%= item[:quantity] %> </p>
     <% end %>
   </td>
   <td>
     <%= number_to_currency( item[:total_price] ) %>
   </td>
   <td>
-    <%= form_with(url: cart_path(item[:id]) , method: "DELETE") do %>
-      <button type="submit" class="close" aria-label="Close" style="color:red;">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    <% end %>
+      <% if !order.completed? %>
+        <%= form_with(url: cart_path(item[:id]) , method: "DELETE") do %>
+        <button type="submit" class="close" aria-label="Close" style="color:red;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+         <% end %>
+      <% end %>
 
   </td>
 </tr>
