@@ -45,9 +45,11 @@
               
              <%= render(partial: "review", collection: @product.reviews) || "There are no reviews currently." %>
             <!-- <a href="" class="btn btn-success" data-toggle="modal" data-target="review-modal">Leave a Review</a> -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-modal">
+           <% if current_customer %>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-modal">
                 Leave a Review
               </button>
+            <% end %>
           </div>
         <!-- /.card -->
       </div>

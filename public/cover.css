@@ -28,6 +28,7 @@ body{
 .cover-container {
   max-width: 30em;
   background-color: rgba(73, 14,41, .7);
+  border-radius: 30px;
 }
 
 /*
@@ -41,7 +42,6 @@ body{
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
-
 
 /*
  * Footer
