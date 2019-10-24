@@ -20,4 +20,15 @@ class Product < ApplicationRecord
 
     end
 
+    def self.sort_by_cheapest
+        Product.all.sort_by{|product| product.price}
+    end
+
+    def self.sort_by_most_expensive
+        Product.sort_by_cheapest.reverse
+    end
+
+    def self.sort_by_rating 
+        Product.all.max_by(3){|product| product.average_rating}
+    end
 end
