@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    redirect_to home_path unless session.include? :user_id
+    redirect_to home_path unless session.include? :customer_id
   end
 end
