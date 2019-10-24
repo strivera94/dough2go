@@ -1,4 +1,6 @@
 class ProductOrdersController < ApplicationController
+  before_action :require_login
+
   def create 
     @product_order = ProductOrder.create(product_order_params.merge({order: current_customer.last_order}))
     @order = @product_order.order

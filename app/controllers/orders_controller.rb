@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :require_login
+
   def show
     @order = Order.find(params[:id])
     @items = @order.product_order_rows 

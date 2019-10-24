@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    before_action :require_login
+
     def create
         review_p = review_params
         @review = Review.create(review_p.merge({customer: current_customer}))

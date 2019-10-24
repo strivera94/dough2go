@@ -1,4 +1,7 @@
 class CustomersController < ApplicationController
+    before_action :require_login
+    skip_before_action :require_login, only: [:create, :new]
+    
     def show
         @customer = Customer.find(params[:id])
     end
