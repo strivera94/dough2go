@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
             session[:customer_id] = @customer.id # logging them in
             redirect_to @customer
         else
-            flash[:error] = "Sorry-- unable to create account"
+            flash[:error] = "Sorry-- unable to create account. Must be a valid email and password must be at least 8 characters"
             redirect_to new_customer_path
         end
     end
