@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
     has_secure_password
     validates :email, presence: true, uniqueness: true
+    validates :password, length:{ minimum: 8 }
 
     has_many :orders
     has_many :product_orders, through: :orders
